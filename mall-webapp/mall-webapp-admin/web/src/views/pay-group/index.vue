@@ -6,13 +6,12 @@
                 <el-tabs type="card" v-model="activeName">
                     <el-tab-pane label="列表" name="list">
                         <el-row>
-                            <el-form label-position='center' label-width="80px">
-                                <el-col :span="3">
+                            <el-col :span="24">
+                                <el-form :inline="true" label-position='center' label-width="80px">
                                     <el-form-item label="订单号">
-                                        <el-input clearable size="small" v-model="queryForm.orderId"></el-input>
+                                        <el-input clearable size="small" style="width: 200px"
+                                                  v-model="queryForm.orderId"></el-input>
                                     </el-form-item>
-                                </el-col>
-                                <el-col :span="3">
                                     <el-form-item label="状态">
                                         <el-select clearable placeholder="请选择" size="small"
                                                    v-model="queryForm.status">
@@ -20,8 +19,8 @@
                                                        v-for="item in orderStatusOptions"></el-option>
                                         </el-select>
                                     </el-form-item>
-                                </el-col>
-                            </el-form>
+                                </el-form>
+                            </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="24">

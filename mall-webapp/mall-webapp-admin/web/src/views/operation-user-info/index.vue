@@ -4,15 +4,16 @@
         <el-container>
             <el-main>
                 <el-row>
-                    <el-col :span="5">
+                    <el-col :span="24">
                         <el-form :model="ruleForm" :rules="rules" label-width="100px" ref="ruleForm">
                             <el-form-item label="用户名" prop="username">
                                 <el-input :disabled="ruleForm.userId != null" size="small"
-                                          v-model="ruleForm.username"></el-input>
+                                          style="width: 200px" v-model="ruleForm.username"></el-input>
                             </el-form-item>
                             <el-form-item :prop="ruleForm.userId == null ? 'password' : 'noPassword'"
                                           label="密码">
-                                <el-input size="small" type="password" v-model="ruleForm.password"></el-input>
+                                <el-input size="small" style="width: 200px" type="password"
+                                          v-model="ruleForm.password"></el-input>
                             </el-form-item>
                             <el-form-item label="所属店铺" v-if="ruleForm.isDefault !== 1">
                                 <el-select :disabled="true" clearable placeholder="请选择" size="small"

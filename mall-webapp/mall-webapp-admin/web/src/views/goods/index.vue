@@ -6,21 +6,19 @@
                 <el-tabs type="card" v-model="activeName">
                     <el-tab-pane label="列表" name="list">
                         <el-row>
-                            <el-form label-position='center' label-width="80px">
-                                <el-col :span="3">
+                            <el-col :span="24">
+                                <el-form :inline="true" label-position='center' label-width="80px">
                                     <el-form-item label="商品名称">
                                         <el-input clearable size="small" v-model="queryForm.atomsGoodsName"></el-input>
                                     </el-form-item>
-                                </el-col>
-                                <el-col :span="3">
                                     <el-form-item label="状态">
                                         <el-select clearable placeholder="请选择" size="small" v-model="queryForm.status">
                                             <el-option :key="item.id" :label="item.name" :value="item.id"
                                                        v-for="item in statusOptions"></el-option>
                                         </el-select>
                                     </el-form-item>
-                                </el-col>
-                            </el-form>
+                                </el-form>
+                            </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="24">
@@ -33,8 +31,9 @@
                         </el-row>
                         <el-row>
                             <el-col :span="24">
-                                <el-table :data="atomsGoodsList" @selection-change="handleSelectionChange" border
-                                          @row-dblclick="detail"
+                                <el-table :data="atomsGoodsList" @row-dblclick="detail"
+                                          @selection-change="handleSelectionChange"
+                                          border
                                           style="width: 100%;margin-top: 5px;">
                                     <el-table-column type="selection" width="55"></el-table-column>
                                     <el-table-column label="原子商品ID" prop="atomsGoodsId"></el-table-column>

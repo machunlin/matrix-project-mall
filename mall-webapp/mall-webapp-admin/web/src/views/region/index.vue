@@ -26,7 +26,7 @@
                             </span>
                         </el-tree>
                     </el-col>
-                    <el-col :span="5" style="margin-left: 20px;" v-if="showRuleForm">
+                    <el-col :span="20" style="padding-left: 20px;" v-if="showRuleForm">
                         <el-form :model="ruleForm" :rules="rules" label-width="100px" ref="ruleForm">
                             <el-form-item label="地区编码" prop="code">
                                 <span v-if="ruleForm.parentCode !== 0">{{ruleForm.parentCode}}  </span>
@@ -34,7 +34,7 @@
                                                  v-model.number="ruleForm.code"></el-input-number>
                             </el-form-item>
                             <el-form-item label="地区名称" prop="name">
-                                <el-input size="small" v-model="ruleForm.name"></el-input>
+                                <el-input size="small" style="width: 200px" v-model="ruleForm.name"></el-input>
                             </el-form-item>
                             <el-form-item>
                                 <el-button @click="save" size="small" type="primary">保存</el-button>

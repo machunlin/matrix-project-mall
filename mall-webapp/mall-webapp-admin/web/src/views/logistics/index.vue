@@ -6,13 +6,13 @@
                 <el-tabs type="card" v-model="activeName">
                     <el-tab-pane label="列表" name="list">
                         <el-row>
-                            <el-form label-position='center' label-width="80px">
-                                <el-col :span="3">
+                            <el-col :span="24">
+                                <el-form :inline="true" label-position='center' label-width="80px">
                                     <el-form-item label="快递名称">
                                         <el-input clearable size="small" v-model="queryForm.logisticsName"></el-input>
                                     </el-form-item>
-                                </el-col>
-                            </el-form>
+                                </el-form>
+                            </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="24">
@@ -29,8 +29,9 @@
                         </el-row>
                         <el-row>
                             <el-col :span="24">
-                                <el-table :data="logisticsList" @selection-change="handleSelectionChange" border
-                                          @row-dblclick="detail"
+                                <el-table :data="logisticsList" @row-dblclick="detail"
+                                          @selection-change="handleSelectionChange"
+                                          border
                                           style="width: 100%;margin-top: 5px;">
                                     <el-table-column type="selection" width="55"></el-table-column>
                                     <el-table-column label="快递ID" prop="logisticsId" width="250"></el-table-column>
@@ -49,10 +50,11 @@
                     </el-tab-pane>
                     <el-tab-pane label="详情" name="detail" v-if="showDetail">
                         <el-row>
-                            <el-col :span="5">
+                            <el-col :span="24">
                                 <el-form :model="ruleForm" :rules="rules" label-width="100px" ref="ruleForm">
                                     <el-form-item label="快递名称" prop="logisticsName">
-                                        <el-input size="small" v-model="ruleForm.logisticsName"></el-input>
+                                        <el-input size="small" style="width: 200px"
+                                                  v-model="ruleForm.logisticsName"></el-input>
                                     </el-form-item>
                                     <el-form-item>
                                         <el-button @click="save" size="small" type="primary">保存</el-button>

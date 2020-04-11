@@ -4,10 +4,10 @@
         <el-container>
             <el-main>
                 <el-row>
-                    <el-col :span="5">
+                    <el-col :span="24">
                         <el-form :model="ruleForm" :rules="rules" label-width="100px" ref="ruleForm">
                             <el-form-item label="店铺名称" prop="shopName">
-                                <el-input size="small" v-model="ruleForm.shopName"></el-input>
+                                <el-input size="small" style="width: 200px" v-model="ruleForm.shopName"></el-input>
                             </el-form-item>
                             <el-form-item label="店铺Logo">
                                 <file-upload :change="uploadImagesChange" :fileList="upload.images" :limit="1"

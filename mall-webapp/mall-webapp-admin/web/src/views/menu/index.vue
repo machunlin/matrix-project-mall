@@ -26,16 +26,18 @@
                             </span>
                         </el-tree>
                     </el-col>
-                    <el-col :span="5" style="margin-left: 20px;" v-if="showRuleForm">
+                    <el-col :span="20" style="padding-left: 20px;" v-if="showRuleForm">
                         <el-form :model="ruleForm" :rules="rules" label-width="100px" ref="ruleForm">
                             <el-form-item label="菜单名称" prop="menuName">
-                                <el-input :disabled="isReadOnly" size="small" v-model="ruleForm.menuName"></el-input>
+                                <el-input :disabled="isReadOnly" size="small" style="width: 200px"
+                                          v-model="ruleForm.menuName"></el-input>
                             </el-form-item>
                             <el-form-item label="菜单hash值" prop="url">
-                                <el-input :disabled="isReadOnly" size="small" v-model="ruleForm.url"></el-input>
+                                <el-input :disabled="isReadOnly" size="small" style="width: 200px"
+                                          v-model="ruleForm.url"></el-input>
                             </el-form-item>
                             <el-form-item label="排序">
-                                <el-slider size="small" v-model="ruleForm.orderBy"></el-slider>
+                                <el-slider size="small" style="width: 200px" v-model="ruleForm.orderBy"></el-slider>
                             </el-form-item>
                             <el-form-item>
                                 <el-button @click="save" size="small" type="primary">保存</el-button>

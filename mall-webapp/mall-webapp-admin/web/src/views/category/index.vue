@@ -26,10 +26,11 @@
                             </span>
                         </el-tree>
                     </el-col>
-                    <el-col :span="5" style="margin-left: 20px;" v-if="showRuleForm">
+                    <el-col :span="20" style="padding-left: 20px;" v-if="showRuleForm">
                         <el-form :model="ruleForm" :rules="rules" label-width="100px" ref="ruleForm">
                             <el-form-item label="分类名称" prop="categoryName">
-                                <el-input size="small" v-model="ruleForm.categoryName"></el-input>
+                                <el-input size="small" style="width: 200px"
+                                          v-model="ruleForm.categoryName"></el-input>
                             </el-form-item>
                             <el-form-item>
                                 <el-button @click="save" size="small" type="primary">保存</el-button>

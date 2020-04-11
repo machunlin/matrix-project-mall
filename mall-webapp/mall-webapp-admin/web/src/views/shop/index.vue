@@ -6,21 +6,19 @@
                 <el-tabs type="card" v-model="activeName">
                     <el-tab-pane label="列表" name="list">
                         <el-row>
-                            <el-form label-position='center' label-width="80px">
-                                <el-col :span="3">
+                            <el-col :span="24">
+                                <el-form :inline="true" label-position='center' label-width="80px">
                                     <el-form-item label="店铺名">
                                         <el-input clearable size="small" v-model="queryForm.shopName"></el-input>
                                     </el-form-item>
-                                </el-col>
-                                <el-col :span="3">
                                     <el-form-item label="状态">
                                         <el-select clearable placeholder="请选择" size="small" v-model="queryForm.status">
                                             <el-option :key="item.id" :label="item.name" :value="item.id"
                                                        v-for="item in statusOptions"></el-option>
                                         </el-select>
                                     </el-form-item>
-                                </el-col>
-                            </el-form>
+                                </el-form>
+                            </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="24">
@@ -41,8 +39,9 @@
                         </el-row>
                         <el-row>
                             <el-col :span="24">
-                                <el-table :data="shopList" @selection-change="handleSelectionChange" border
-                                          @row-dblclick="detail"
+                                <el-table :data="shopList" @row-dblclick="detail"
+                                          @selection-change="handleSelectionChange"
+                                          border
                                           style="width: 100%;margin-top: 5px;">
                                     <el-table-column type="selection" width="55"></el-table-column>
                                     <el-table-column label="店铺ID" prop="shopId" width="250"></el-table-column>
@@ -70,10 +69,11 @@
                     </el-tab-pane>
                     <el-tab-pane label="详情" name="detail" v-if="showDetail">
                         <el-row>
-                            <el-col :span="5">
+                            <el-col :span="24">
                                 <el-form :model="ruleForm" :rules="rules" label-width="100px" ref="ruleForm">
                                     <el-form-item label="店铺名称" prop="shopName">
-                                        <el-input size="small" v-model="ruleForm.shopName"></el-input>
+                                        <el-input size="small" style="width: 200px"
+                                                  v-model="ruleForm.shopName"></el-input>
                                     </el-form-item>
                                     <el-form-item label="店铺Logo">
                                         <file-upload :change="uploadImagesChange" :fileList="upload.images" :limit="1"

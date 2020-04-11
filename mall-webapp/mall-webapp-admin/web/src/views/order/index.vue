@@ -6,13 +6,11 @@
                 <el-tabs type="card" v-model="activeName">
                     <el-tab-pane label="列表" name="list">
                         <el-row>
-                            <el-form label-position='center' label-width="80px">
-                                <el-col :span="3">
+                            <el-col :span="24">
+                                <el-form :inline="true" label-position='center' label-width="80px">
                                     <el-form-item label="订单号">
                                         <el-input clearable size="small" v-model="queryForm.orderId"></el-input>
                                     </el-form-item>
-                                </el-col>
-                                <el-col :span="3">
                                     <el-form-item label="订单状态">
                                         <el-select clearable placeholder="请选择" size="small"
                                                    v-model="queryForm.orderStatus">
@@ -20,8 +18,8 @@
                                                        v-for="item in orderStatusOptions"></el-option>
                                         </el-select>
                                     </el-form-item>
-                                </el-col>
-                            </el-form>
+                                </el-form>
+                            </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="24">
@@ -58,7 +56,7 @@
                     </el-tab-pane>
                     <el-tab-pane label="详情" name="detail" v-if="showDetail">
                         <el-row v-if="selectRow.hasLogistics === 1">
-                            <el-col :span="5" style="margin-bottom: 20px;">
+                            <el-col :span="24" style="margin-bottom: 20px;">
                                 <el-card class="box-card">
                                     <div class="clearfix" slot="header">
                                         <span>收货地址</span>
@@ -90,18 +88,20 @@
                                         <el-form-item label="联系人" prop="linkName">
                                             <el-input
                                                     :disabled="!(selectRow.orderStatus === 11 || selectRow.orderStatus === 12) || !shipFormEdit"
+                                                    style="width: 200px"
                                                     type="text"
                                                     v-model="addressForm.linkName"></el-input>
                                         </el-form-item>
                                         <el-form-item label="手机号" prop="mobile">
                                             <el-input
                                                     :disabled="!(selectRow.orderStatus === 11 || selectRow.orderStatus === 12) || !shipFormEdit"
-                                                    type="text"
-                                                    v-model="addressForm.mobile"></el-input>
+                                                    style="width: 200px"
+                                                    type="text" v-model="addressForm.mobile"></el-input>
                                         </el-form-item>
                                         <el-form-item label="详细地址" prop="address">
                                             <el-input
                                                     :disabled="!(selectRow.orderStatus === 11 || selectRow.orderStatus === 12) || !shipFormEdit"
+                                                    style="width: 200px"
                                                     type="textarea"
                                                     v-model="addressForm.address"></el-input>
                                         </el-form-item>
