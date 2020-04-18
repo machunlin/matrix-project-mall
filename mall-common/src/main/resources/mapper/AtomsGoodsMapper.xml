@@ -34,7 +34,7 @@
             </if>
         </where>
         GROUP BY ag.ATOMS_GOODS_ID
-        ORDER BY ag.UPDATE_TIME
+        ORDER BY ag.UPDATE_TIME DESC
     </select>
 
     <select id="getAtomsGoods" resultType="matrix.project.mall.dto.AtomsGoodsDto">

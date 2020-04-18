@@ -86,7 +86,7 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements Sh
         } else {
             queryWrapper.ne("STATUS", Constant.DELETED);
         }
-        queryWrapper.orderByAsc("UPDATE_TIME");
+        queryWrapper.orderByDesc("UPDATE_TIME");
         IPage<Shop> page = new Page<>(queryShopVo.getPage(), queryShopVo.getPageSize());
         return page(page, queryWrapper).getRecords();
     }
